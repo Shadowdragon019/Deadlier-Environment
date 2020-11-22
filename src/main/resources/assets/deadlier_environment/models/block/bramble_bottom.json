@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "deadlyier_enviroment:blocks/barmble",
+    "particle": "deadlyier_enviroment:blocks/barmble"
+  }
+}

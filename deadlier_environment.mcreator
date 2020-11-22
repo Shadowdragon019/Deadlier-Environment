@@ -1,0 +1,331 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "Bramble",
+      "type": "plant",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bramble"
+    },
+    {
+      "name": "BrambleMobplayerCollidesWithPlant",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bramble_mobplayer_collides_with_plant",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bleeding",
+      "type": "potion",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bleeding"
+    },
+    {
+      "name": "BleedingOnPotionActiveTick",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bleeding_on_potion_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BleedingPotionStartedapplied",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bleeding_potion_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Brambles",
+      "type": "tag",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "brambles"
+    },
+    {
+      "name": "BrambleUpdateTick",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bramble_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WoodenDagger",
+      "type": "tool",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wooden_dagger"
+    },
+    {
+      "name": "StoneDagger",
+      "type": "tool",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stone_dagger"
+    },
+    {
+      "name": "IronDagger",
+      "type": "tool",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "iron_dagger"
+    },
+    {
+      "name": "GoldDagger",
+      "type": "tool",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gold_dagger"
+    },
+    {
+      "name": "DiamondDagger",
+      "type": "tool",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_dagger"
+    },
+    {
+      "name": "MushroomCapZombie",
+      "type": "mob",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mushroom_cap_zombie"
+    },
+    {
+      "name": "PlayerNearMushroomCapZombie",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "player_near_mushroom_cap_zombie",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EntityAttacks",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "entity_attacks",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EntityAttemptGrief",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "entity_attempt_grief",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreeperExplosionCommandExecuted",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "creeper_explosion_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreeperExplosion",
+      "type": "command",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "creeper_explosion"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "CreeperExplosionSize",
+      "type": "number",
+      "scope": "map",
+      "value": "6.0"
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.deadlier_enviroment.diamond_dagger": "Diamond Dagger",
+      "item.deadlier_environment.mushroom_cap_zombie_spawn_egg": "Mushroom Cap Zombie Spawn Egg",
+      "death.attack.brambles": "%s was shredded to death by brambles",
+      "item.deadlyier_enviroment.gold_dagger": "Gold Dagger",
+      "item.deadlier_environment.gold_dagger": "Gold Dagger",
+      "effect.bleeding": "Bleeding",
+      "block.deadlier_enviroment.bramble": "Bramble",
+      "item.deadlyier_enviroment.iron_dagger": "Iron Dagger",
+      "item.deadlier_enviroment.gold_dagger": "Gold Dagger",
+      "item.deadlier_environment.diamond_dagger": "Diamond Dagger",
+      "item.deadlier_environment.stone_dagger": "Stone Dagger",
+      "item.deadlier_environment.wooden_dagger": "Wooden Dagger",
+      "item.deadlyier_enviroment.stone_dagger": "Stone Dagger",
+      "item.deadlier_environment.iron_dagger": "Iron Dagger",
+      "item.minecraft.lingering_potion.effect.bleeding": "Lingering Bleeding",
+      "item.deadlyier_enviroment.diamond_dagger": "Diamond Dagger",
+      "block.deadlyier_enviroment.bramble": "Bramble",
+      "death.attack.bleed": "%s bled to death",
+      "block.deadlier_environment.bramble": "Bramble",
+      "item.deadlier_enviroment.iron_dagger": "Iron Dagger",
+      "item.minecraft.tipped_arrow.effect.bleeding": "Arrow of Bleeding",
+      "item.minecraft.potion.effect.bleeding": "Bleeding",
+      "entity.deadlier_environment.mushroom_cap_zombie": "Mushroom Cap Zombie",
+      "item.minecraft.splash_potion.effect.bleeding": "Splash Bleeding",
+      "item.deadlyier_enviroment.wooden_dagger": "Wooden Dagger",
+      "item.deadlier_enviroment.wooden_dagger": "Wooden Dagger",
+      "item.deadlier_enviroment.stone_dagger": "Stone Dagger"
+    }
+  },
+  "workspaceSettings": {
+    "modid": "deadlier_environment",
+    "modName": "Deadlier Environment",
+    "version": "1.0.0 Beta",
+    "description": "A mod to make Minecraft\u0027s enviroment deadlier",
+    "author": "Oskar W. Heineck, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.15.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.deadlyierenviroment",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202000547520
+}

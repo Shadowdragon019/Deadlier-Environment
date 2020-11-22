@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "deadlier_environment:items/gold_dagger"
+  }
+}

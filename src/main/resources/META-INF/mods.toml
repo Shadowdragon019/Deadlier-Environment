@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+
+[[mods]]
+modId="deadlier_environment"
+version="1.0.0 Beta"
+displayName="Deadlier Environment"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+displayURL="https://mcreator.net"
+authors="Oskar W. Heineck, MCreator"
+description='''
+A mod to make Minecraft's enviroment deadlier
+'''
+
+[[dependencies.deadlier_environment]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

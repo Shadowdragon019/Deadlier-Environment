@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "deadlier_environment:blocks/barmble",
+    "particle": "deadlier_environment:blocks/barmble"
+  }
+}
