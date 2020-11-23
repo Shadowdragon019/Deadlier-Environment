@@ -1,0 +1,20 @@
+{
+  "group": "stone_dagger",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "2 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:stone"
+    },
+    "2": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "deadlier_environment:stone_dagger",
+    "count": 1
+  }
+}

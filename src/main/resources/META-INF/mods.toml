@@ -3,7 +3,7 @@ loaderVersion="[31,)"
 
 [[mods]]
 modId="deadlier_environment"
-version="1.0.1 Beta"
+version="1.0.2 Beta"
 displayName="Deadlier Environment"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
@@ -21,4 +21,9 @@ A mod to make Minecraft's enviroment deadlier
 
 
 
+[[dependencies.deadlier_environment]]
+    modId="just_enough_items"
+    mandatory=false
+    ordering="NONE"
+    side="BOTH"
 

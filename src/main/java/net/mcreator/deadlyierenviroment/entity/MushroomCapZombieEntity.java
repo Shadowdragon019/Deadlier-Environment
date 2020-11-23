@@ -107,9 +107,11 @@ public class MushroomCapZombieEntity extends DeadlierEnvironmentModElements.ModE
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 1));
-			this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, true));
-			this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, (float) 0.5) {
+			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, true));
+			this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, true));
+			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.goalSelector.addGoal(4, new RandomWalkingGoal(this, 1));
+			this.goalSelector.addGoal(5, new LeapAtTargetGoal(this, (float) 0.5) {
 				@Override
 				public boolean shouldExecute() {
 					double x = CustomEntity.this.getPosX();
@@ -120,8 +122,6 @@ public class MushroomCapZombieEntity extends DeadlierEnvironmentModElements.ModE
 							&& PlayerNearMushroomCapZombieProcedure.executeProcedure(ImmutableMap.of("x", x, "y", y, "z", z, "world", world));
 				}
 			});
-			this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, true));
-			this.targetSelector.addGoal(5, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
 			this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(7, new SwimGoal(this));
 		}

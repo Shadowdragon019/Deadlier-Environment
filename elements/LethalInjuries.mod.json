@@ -1,0 +1,25 @@
+{
+  "_fv": 13,
+  "_type": "potion",
+  "definition": {
+    "name": "Lethal Injuries",
+    "effectName": "Lethal Injuries",
+    "icon": "need_texture_texture.png",
+    "color": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "isBad": true,
+    "isBenefitical": false,
+    "registerPotionType": false,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "LethalInjuriesPotionStartedapplied"
+    },
+    "onExpired": {
+      "name": "LethalInjuriesPotionExpires"
+    }
+  }
+}

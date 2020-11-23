@@ -25,26 +25,26 @@ public class BleedingOnPotionActiveTickProcedure extends DeadlierEnvironmentModE
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		entity.getPersistentData().putDouble("bleedingProgress", ((entity.getPersistentData().getDouble("bleedingProgress")) + 1));
-		if ((new Object() {
-			boolean check(Entity _entity) {
-				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == Effects.REGENERATION)
-							return true;
-					}
-				}
-				return false;
-			}
-		}.check(entity))) {
-			if (entity instanceof LivingEntity) {
-				((LivingEntity) entity).removePotionEffect(Effects.REGENERATION);
-			}
-		}
 		if (((entity.getPersistentData().getDouble("bleedingProgress")) >= 40)) {
 			entity.getPersistentData().putDouble("bleedingProgress", 0);
 			if (entity instanceof LivingEntity) {
 				((LivingEntity) entity).attackEntityFrom(new DamageSource("bleed").setDamageBypassesArmor(), (float) 1);
+			}
+			if ((new Object() {
+				boolean check(Entity _entity) {
+					if (_entity instanceof LivingEntity) {
+						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+						for (EffectInstance effect : effects) {
+							if (effect.getPotion() == Effects.REGENERATION)
+								return true;
+						}
+					}
+					return false;
+				}
+			}.check(entity))) {
+				if (entity instanceof LivingEntity) {
+					((LivingEntity) entity).removePotionEffect(Effects.REGENERATION);
+				}
 			}
 		}
 	}

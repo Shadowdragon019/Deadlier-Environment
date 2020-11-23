@@ -5,12 +5,19 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.Explosion;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.item.ItemStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.EnchantmentHelper;
 
+import net.mcreator.deadlyierenviroment.potion.BleedingPotion;
 import net.mcreator.deadlyierenviroment.entity.MushroomCapZombieEntity;
+import net.mcreator.deadlyierenviroment.enchantment.SparklingBladeEnchantment;
+import net.mcreator.deadlyierenviroment.enchantment.DeepCutsEnchantment;
 import net.mcreator.deadlyierenviroment.DeadlierEnvironmentModElements;
 
 import java.util.Map;
@@ -34,12 +41,36 @@ public class EntityAttacksProcedure extends DeadlierEnvironmentModElements.ModEl
 				System.err.println("Failed to load dependency sourceentity for procedure EntityAttacks!");
 			return;
 		}
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure EntityAttacks!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
+		IWorld world = (IWorld) dependencies.get("world");
 		if ((sourceentity instanceof MushroomCapZombieEntity.CustomEntity)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 100, (int) 0));
 			entity.setMotion((entity.getMotion().getX()), ((entity.getMotion().getY()) + 0.5), (entity.getMotion().getZ()));
+		}
+		if (((EnchantmentHelper.getEnchantmentLevel(DeepCutsEnchantment.enchantment,
+				((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(BleedingPotion.potion,
+						(int) (((EnchantmentHelper.getEnchantmentLevel(DeepCutsEnchantment.enchantment,
+								((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)))
+								+ 1) * 30),
+						(int) 0));
+		}
+		if ((((EnchantmentHelper.getEnchantmentLevel(SparklingBladeEnchantment.enchantment,
+				((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0))
+				&& (0 == Math.round((Math.random() * (2 - (EnchantmentHelper.getEnchantmentLevel(SparklingBladeEnchantment.enchantment,
+						((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY))))))))) {
+			if (world instanceof World && !world.getWorld().isRemote) {
+				world.getWorld().createExplosion(null, (int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ()), (float) 1,
+						Explosion.Mode.BREAK);
+			}
 		}
 	}
 

@@ -46,6 +46,8 @@ public class EntityAttemptGriefProcedure extends DeadlierEnvironmentModElements.
 						_evt.setResult(Event.Result.DENY);
 				}
 			}
+			if (!entity.world.isRemote)
+				entity.remove();
 			if (world instanceof World && !world.getWorld().isRemote) {
 				world.getWorld().createExplosion(null, (int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ()),
 						(float) (DeadlierEnvironmentModVariables.MapVariables.get(world).CreeperExplosionSize), Explosion.Mode.BREAK);
